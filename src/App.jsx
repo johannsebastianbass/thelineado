@@ -8,6 +8,8 @@ import {
 } from 'lucide-react'
 import './index.css'
 
+const base = import.meta.env.BASE_URL
+
 const InstagramIcon = ({ size = 22 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round">
     <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="#555" strokeWidth="1" />
@@ -80,7 +82,7 @@ function App() {
         }}
       >
         <img
-          src="/images/logo-text.png"
+          src={`${base}images/logo-text.png`}
           alt="The Lineado"
           style={{
             width: 'clamp(180px, 40vw, 320px)',
@@ -406,7 +408,7 @@ function App() {
               style={{ marginBottom: '12px', breakInside: 'avoid' }}
             >
               <img
-                src={`/images/${photo}`}
+                src={`${base}images/${photo}`}
                 alt="The Lineado"
                 style={{
                   width: '100%',
@@ -434,7 +436,7 @@ function App() {
       <footer style={{ borderTop: '1px solid #1a1a1a', padding: '48px 24px' }}>
         <div style={{ maxWidth: '500px', margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '24px' }}>
           <img
-            src="/images/logo.png"
+            src={`${base}images/logo.png`}
             alt="The Lineado"
             style={{ width: '40px', height: '40px', objectFit: 'contain', opacity: 0.3 }}
           />
