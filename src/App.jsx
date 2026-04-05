@@ -67,48 +67,32 @@ function App() {
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#0a0a0a', color: '#f5f0e8' }}>
 
-      {/* ===== LOGO HEADER ===== */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        style={{
-          width: '100%',
-          backgroundColor: '#000',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          padding: '48px 24px',
-        }}
-      >
-        <img
-          src={`${base}images/logo-text.png`}
-          alt="The Lineado"
-          style={{
-            width: 'clamp(180px, 40vw, 320px)',
-            objectFit: 'contain',
-          }}
-        />
-      </motion.div>
-
-      {/* ===== HERO ===== */}
+      {/* ===== MAIN CONTENT ===== */}
       <motion.section
         style={{
-          minHeight: 'calc(100vh - 160px)',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          padding: '24px',
-          position: 'relative',
+          maxWidth: '500px',
+          margin: '0 auto',
+          padding: '64px 24px 48px',
           textAlign: 'center',
         }}
         initial="hidden"
         animate="visible"
         variants={stagger}
       >
+        {/* Logo */}
+        <motion.div variants={fadeUp} custom={0} style={{ marginBottom: '32px' }}>
+          <img
+            src={`${base}images/logo-text.png`}
+            alt="The Lineado"
+            style={{
+              width: 'clamp(200px, 50vw, 340px)',
+              objectFit: 'contain',
+            }}
+          />
+        </motion.div>
 
-        <motion.div variants={fadeUp} custom={1} style={{ display: 'flex', gap: '16px', marginBottom: '64px' }}>
+        {/* Social Icons */}
+        <motion.div variants={fadeUp} custom={1} style={{ display: 'flex', gap: '16px', justifyContent: 'center', marginBottom: '48px' }}>
           <a
             href="https://instagram.com/the.lineado"
             target="_blank"
@@ -169,51 +153,10 @@ function App() {
           </a>
         </motion.div>
 
-        <motion.div
-          variants={fadeUp}
-          custom={3}
-          style={{ position: 'absolute', bottom: '40px' }}
-        >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-          >
-            <ChevronDown size={20} style={{ color: '#3a3a3a' }} />
-          </motion.div>
+        {/* Divider */}
+        <motion.div variants={fadeUp} custom={2} style={{ display: 'flex', justifyContent: 'center', marginBottom: '48px' }}>
+          <div style={{ width: '48px', height: '1px', backgroundColor: '#2a2a2a' }} />
         </motion.div>
-      </motion.section>
-
-      {/* ===== DIVIDER ===== */}
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <div style={{ width: '64px', height: '1px', backgroundColor: '#2a2a2a' }} />
-      </div>
-
-      {/* ===== LINKS ===== */}
-      <motion.section
-        style={{
-          maxWidth: '500px',
-          margin: '0 auto',
-          padding: '96px 24px',
-          textAlign: 'center',
-        }}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: '-100px' }}
-        variants={stagger}
-      >
-        <motion.h2
-          variants={fadeUp}
-          style={{
-            fontSize: '12px',
-            textTransform: 'uppercase',
-            letterSpacing: '0.3em',
-            color: '#5a5a5a',
-            marginBottom: '48px',
-          }}
-        >
-          Ouça agora
-        </motion.h2>
-
         {/* Single Button */}
         <motion.div variants={fadeUp} style={{ marginBottom: '16px' }}>
           <button
@@ -354,12 +297,6 @@ function App() {
           </a>
         </motion.div>
       </motion.section>
-
-
-      {/* ===== DIVIDER ===== */}
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <div style={{ width: '64px', height: '1px', backgroundColor: '#2a2a2a' }} />
-      </div>
 
       {/* ===== GALLERY ===== */}
       <motion.section
