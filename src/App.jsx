@@ -80,13 +80,14 @@ function App() {
         variants={stagger}
       >
         {/* Logo */}
-        <motion.div variants={fadeUp} custom={0} style={{ marginBottom: '32px' }}>
+        <motion.div variants={fadeUp} custom={0} style={{ marginBottom: '32px', display: 'flex', justifyContent: 'center' }}>
           <img
             src={`${base}images/logo-text.png`}
             alt="The Lineado"
             style={{
               width: 'clamp(200px, 50vw, 340px)',
               objectFit: 'contain',
+              display: 'block',
             }}
           />
         </motion.div>
