@@ -108,22 +108,7 @@ function App() {
         variants={stagger}
       >
 
-        <motion.p
-          variants={fadeUp}
-          custom={1}
-          style={{
-            fontFamily: "'Playfair Display', serif",
-            color: '#c8c2b8',
-            fontSize: 'clamp(0.85rem, 2vw, 1rem)',
-            fontStyle: 'italic',
-            letterSpacing: '0.05em',
-            marginBottom: '32px',
-          }}
-        >
-          Presentes com rock, timbrados para a noite.
-        </motion.p>
-
-        <motion.div variants={fadeUp} custom={2} style={{ display: 'flex', gap: '16px', marginBottom: '64px' }}>
+        <motion.div variants={fadeUp} custom={1} style={{ display: 'flex', gap: '16px', marginBottom: '64px' }}>
           <a
             href="https://instagram.com/the.lineado"
             target="_blank"
